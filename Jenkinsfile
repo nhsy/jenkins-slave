@@ -16,7 +16,7 @@ pipeline {
     stages {
         stage("Build") {
             steps {
-                sh "docker build --rm --no-cache --tag $REGISTRY/$IMAGE:$TAG"
+                sh "docker build --rm --no-cache --tag $REGISTRY/$IMAGE:$TAG ."
             }
         }
         stage("Push") {
