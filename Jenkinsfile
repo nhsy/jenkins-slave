@@ -14,6 +14,11 @@ pipeline {
     }
 
     stages {
+        stage("Pull") {
+            steps {
+                sh "docker pull jenkins/inbound-agent"
+            }
+        }
         stage("Build") {
             steps {
                 sh "docker build --rm --no-cache --tag $REGISTRY/$IMAGE:$TAG ."
